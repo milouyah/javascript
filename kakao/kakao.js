@@ -16,7 +16,8 @@ const user = require('./config.json');
 authorization = user.authorization;
 //[CHECK(END)]
 
-function sendMessage(message, access_token){
+function sendMessage(access_token){
+  message = send_msg;
   //Body
 
   obj = { 
@@ -56,8 +57,7 @@ function sendMessage(message, access_token){
 }
 
 
-function refreshToken(){
-  console.log('refreshToken(start)');
+function refreshToken(cb){
   url = "https://kauth.kakao.com/oauth/token";
   obj = { 
     grant_type:'refresh_token',
@@ -82,15 +82,20 @@ function refreshToken(){
       console.log(response.statusText);
       console.log(response.data);
 
-      sendMessage(user.text, response.data.access_token);
+      cb(response.data.access_token);
       
   })
   .catch(function (error) {
       //console.log(error);
     });  
-
-    console.log('refreshToken(end)');
 }
 
-refreshToken();
-//sendMessage(null);
+let send_msg;
+function send(text){
+  send_msg = text
+  refreshToken(sendMessage);
+}
+
+module.exports = {
+  send: send,
+}

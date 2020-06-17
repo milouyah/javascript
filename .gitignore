@@ -6,3 +6,4 @@ __pycache__
 *.pickle
 *.info
 node_modules
+config.json
