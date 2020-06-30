@@ -1,5 +1,5 @@
 const axios = require('axios');
-const queryString = require('queryString');
+const queryString = require('querystring');
 const sf = require('sf');
 const user = require('./config.json');
 
