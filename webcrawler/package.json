@@ -1,0 +1,17 @@
+{
+  "name": "web-crawler",
+  "version": "1.0.0",
+  "description": "1) Axios  \r 2) Cheerio : Node.js 환경에서 JQuery 처럼 DOM Selector 기능들을 제공",
+  "main": "webcrawler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "iconv-lite": "^0.6.1"
+  }
+}
