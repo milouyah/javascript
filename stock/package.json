@@ -1,0 +1,15 @@
+{
+  "name": "stock",
+  "version": "1.0.0",
+  "description": "https://polling.finance.naver.com/api/realtime.nhn?query=SERVICE_ITEM:263750|SERVICE_RECENT_ITEM:263750,005930,252670&_callback=data",
+  "main": "stockget.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "iconv-lite": "^0.6.1"
+  }
+}
