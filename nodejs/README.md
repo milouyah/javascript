@@ -33,3 +33,7 @@ npm -v
 
 
 * using `Docker`
+
+#### Trouble shooting
+*[Getting GLIBC_2.28 not found](https://stackoverflow.com/questions/72921215/getting-glibc-2-28-not-found)
+
