@@ -57,6 +57,9 @@ $ npm config set proxy http://[]
 $ npm config set https-proxy https:/[]
 $ npm config set strict-ssl false
 $ npm config set registry http://registry.npmjs.org/ # optional
+
+# List configurations
+$ npm config list
 ```
 
 
