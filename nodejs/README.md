@@ -45,3 +45,19 @@ $ ldd --version # GLIBC version
 
 * Ubuntu 18.04에는 2.27 version 이 설치
 * node 16 사용 또는 GLIBC or OS upgrade
+
+
+### npm
+
+* Proxy
+
+```bash
+$ npm config set cafile [cafile-path]
+$ npm config set proxy http://[]
+$ npm config set https-proxy https:/[]
+$ npm config set strict-ssl false
+$ npm config set registry http://registry.npmjs.org/ # optional
+```
+
+
+
