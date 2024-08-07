@@ -1,6 +1,4 @@
-# javascript
-javascript samples
+# JavaScript
 
 
-## node
-[node distribution](https://github.com/nodesource/distributions/blob/master/README.md)
+## [Node.js](./nodejs/README.md)
