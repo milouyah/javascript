@@ -4,6 +4,7 @@
 * nodejs --> typescript --> angular
 
 ## [Node.js](./nodejs/README.md)
+## [RxJS](./rxjs/REDME.md)
 
 ## Packages
 ### [express](./express/README.md)
