@@ -1,4 +1,4 @@
-# Installation
+# Install Node.js
 
 * [Download Node.js®](https://nodejs.org/en/download/prebuilt-installer/current)
 
@@ -6,9 +6,9 @@
 
 * [fnm](./fnm.md)
 
-## Ubuntu
+## Linxu
 
-### [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm)
+### [nvm - Node Version Manager](https://github.com/nvm-sh/nvm)
 
 ```bash
 # 0.40.0에서는 nodejs list가 안나옴. 추후 업데이트 필요
