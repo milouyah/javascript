@@ -12,5 +12,5 @@
 
 # Links
 * [w3school](https://www.w3schools.com)
-* [JavaScript 동적인 클라이언트 사이드 스크립트언어](https://developer.mozillar.org/ko/docs/Learn/JavaScript)
+* [JavaScript 동적인 클라이언트 사이드 스크립트언어](https://developer.mozilla.org/ko/docs/Learn/JavaScript)
 * [TypeScript](https://github.com/milouyah/typescript/blob/main/README.md)
