@@ -1,3 +1,54 @@
+`getHeaders()` 메서드는 `form-data` 라이브러리에서 제공하는 것이며, 이를 사용하려면 `form-data` 패키지를 설치하고 사용해야 합니다. 하지만 예제 코드에서는 `FormData`가 브라우저에서 제공되는 `FormData` API와 혼동될 수 있습니다. Node.js에서는 브라우저의 `FormData` 대신 `form-data` 라이브러리를 사용해야 합니다.
+
+`getHeaders()`가 없는 이유는 `FormData`가 Node.js에서 지원되는 방식과 다르기 때문입니다. 따라서, Node.js에서 파일을 업로드할 때는 `form-data` 패키지를 사용해야 합니다.
+
+### 해결 방법: `form-data` 패키지 사용
+
+먼저, `form-data` 패키지를 설치해야 합니다.
+
+```bash
+npm install form-data
+```
+
+그 후, 아래와 같이 코드를 수정할 수 있습니다:
+
+### 수정된 `sendZipFile` 함수
+```javascript
+const fs = require('fs-extra');
+const FormData = require('form-data');
+const axios = require('axios');
+
+// ZIP 파일을 POST로 전송하는 함수
+async function sendZipFile(url, filePath) {
+  const formData = new FormData();
+  formData.append('file', fs.createReadStream(filePath));  // 파일 스트림 추가
+
+  try {
+    const response = await axios.post(url, formData, {
+      headers: {
+        ...formData.getHeaders(),  // form-data에서 헤더 가져오기
+      },
+    });
+    console.log('File uploaded successfully:', response.data);
+  } catch (err) {
+    console.error('File upload failed:', err.message);
+  }
+}
+```
+
+### 코드 설명:
+
+1. **`form-data` 라이브러리 사용**: Node.js에서는 브라우저에서 제공하는 `FormData` API 대신, `form-data` 라이브러리를 사용해야 합니다.
+2. **`formData.getHeaders()`**: `axios`에서 POST 요청을 보낼 때는 적절한 `multipart/form-data` 헤더를 설정해야 합니다. `form-data` 라이브러리의 `getHeaders()` 메서드를 사용하여 이 헤더를 가져올 수 있습니다.
+3. **`fs.createReadStream()`**: ZIP 파일을 스트림으로 읽어서 `formData`에 추가하고, 이를 POST 요청의 본문으로 전송합니다.
+
+### 결론
+
+Node.js에서 `FormData`를 사용할 때는 브라우저 API 대신 `form-data` 패키지를 사용하는 것이 중요합니다. 이 방식으로 수정하면 `getHeaders()` 에러가 해결되고, 파일 업로드가 정상적으로 동작할 것입니다.
+
+#
+
+
 JavaScript (Node.js)를 사용하여 폴더를 읽고, 그 폴더의 내용을 ZIP 파일로 묶은 후 이를 HTTP POST 요청으로 전송하는 방법을 설명하겠습니다. 이 예제는 `fs` 모듈로 폴더의 파일을 읽고, `archiver` 라이브러리로 ZIP 파일을 만들고, `axios` 라이브러리로 HTTP POST 요청을 보내는 흐름을 따릅니다.
 
 ### 1. **필요한 패키지 설치**
