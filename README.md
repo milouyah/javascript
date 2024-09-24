@@ -11,4 +11,5 @@
 
 
 # Links
+* [w3school](https://www.w3schools.com)
 * [TypeScript](https://github.com/milouyah/typescript/blob/main/README.md)
